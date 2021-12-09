@@ -78,7 +78,7 @@ void loop()
       Keyboard.press(KEY_LEFT_GUI);
       delay(10);
       Keyboard.releaseAll();
-      delay(50);
+      delay(75);
       for (int i = 0; i < strlen(nubcake_string); i++) {
         Keyboard.write(nubcake_string[i]);
         delay(2);
@@ -95,13 +95,13 @@ void loop()
         delay(2);
       }
       Keyboard.write(KEY_RETURN);
-      delay(250);
+      delay(350);
 
       // send to youtubevid with countdown
       Keyboard.press(KEY_LEFT_GUI);
       delay(10);
       Keyboard.releaseAll();
-      delay(50);
+      delay(75);
       for (int i = 0; i < strlen(shutdowncounterstring); i++) {
         Keyboard.write(shutdowncounterstring[i]);
         delay(2);
@@ -114,12 +114,12 @@ void loop()
       Keyboard.press(KEY_LEFT_GUI);
       delay(10);
       Keyboard.releaseAll();
-      delay(50);
+      delay(75);
       for (int i = 0; i < strlen(notepadstring); i++) {
         Keyboard.write(notepadstring[i]);
         delay(2);
       }
-      delay(50);
+      delay(75);
       Keyboard.write(KEY_RETURN);
       delay(750);
 
@@ -137,7 +137,7 @@ void loop()
       Keyboard.press(KEY_LEFT_GUI);
       delay(10);
       Keyboard.releaseAll();
-      delay(50);
+      delay(75);
       for (int i = 0; i < strlen(rickrollstring); i++) {
         Keyboard.write(rickrollstring[i]);
         delay(2);
