@@ -83,6 +83,7 @@ void loop()
         Keyboard.write(nubcake_string[i]);
         delay(2);
       }
+      delay(75);
       Keyboard.write(KEY_RETURN);
       break;
     case shutdowning:
@@ -94,6 +95,7 @@ void loop()
         Keyboard.write(shutdownstring[i]);
         delay(2);
       }
+      delay(75);
       Keyboard.write(KEY_RETURN);
       delay(350);
 
@@ -106,6 +108,7 @@ void loop()
         Keyboard.write(shutdowncounterstring[i]);
         delay(2);
       }
+      delay(75);
       Keyboard.write(KEY_RETURN);
       state = idle;
       break;
@@ -142,6 +145,7 @@ void loop()
         Keyboard.write(rickrollstring[i]);
         delay(2);
       }
+      delay(75);
       Keyboard.write(KEY_RETURN);
       state = idle;
       break;
