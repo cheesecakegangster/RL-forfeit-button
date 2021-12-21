@@ -57,7 +57,7 @@ void loop()
     case forfeiting:
       Keyboard.write(KEY_ESC);
       delay(65);
-      for (int i = 0; i < 5; i++){
+      for (int i = 0; i < 4; i++){
         Keyboard.write(KEY_DOWN_ARROW);
         delay(20);
       } 
