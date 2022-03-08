@@ -3,6 +3,8 @@
 // global vars
 bool button_state;
 uint32_t timercount = 0;
+uint8_t keypress_delay_fast = 25;
+uint8_t keypress_delay_slow = 75;
 
 enum pinmap{thebuttonpin=7};
 typedef enum systemstate{idle, counting, forfeiting}systemstate; // finite state machine states
@@ -24,18 +26,17 @@ void setup() {
 void loop() 
 {
   button_state = digitalRead(thebuttonpin);
-  // finite state machine
   switch (state){
     case idle:
       if (button_state == LOW){
         state = counting;
         start_timer();
-        delay(20); // debounce
+        delay(25); // debounce
       }
       break;
     case counting: // counts amount of cycles while the button is held down, after a certain amount of cycles is 
       if (button_state == HIGH){
-        delay(20); // debounce (Wow! On release?! that's right, this is required; the button bounces on release for some reason)
+        delay(25); // debounce (Wow! On release?! that's right, this is required; the button bounces on release for some reason)
         if (timercount < 1000){state = forfeiting;} // if you want to hold down the button and make it do other things, can be added easily, just add another state and jump condition
         else {state = idle;}
         stop_timer();
@@ -44,10 +45,10 @@ void loop()
       break;
     case forfeiting:
       Keyboard.write(KEY_ESC);
-      delay(65);
-      for (int i = 0; i < 5; i++){
+      delay(75);
+      for (int i = 0; i < 4; i++){
         Keyboard.write(KEY_DOWN_ARROW);
-        delay(20);
+        delay(25);
       } 
       Keyboard.write(KEY_RETURN);
       state = idle;
